@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaUtensils, FaWineGlassAlt, FaConciergeBell, FaYelp } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock, FaUtensils, FaGlassWater, FaConciergeBell, FaYelp } from 'react-icons/fa';
 import { SiVisa, SiMastercard, SiPaypal, SiAmericanexpress } from 'react-icons/si';
 
 export default function Footer() {

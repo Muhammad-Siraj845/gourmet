@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { FaAward, FaUtensils, FaWineGlassAlt, FaUsers } from 'react-icons/fa';
+import { FaAward, FaUtensils, FaGlassMartiniAlt, FaUsers } from 'react-icons/fa';
+import AboutSection from '../components/About';
 
 const teamMembers = [
   {
@@ -36,9 +37,9 @@ const features = [
     description: 'Locally sourced, organic ingredients for the best flavors'
   },
   {
-    icon: <FaWineGlassAlt className="text-4xl text-amber-500" />,
-    title: 'Wine Selection',
-    description: 'Curated wine list featuring the finest selections'
+    icon: <FaGlassMartiniAlt className="text-4xl text-amber-500" />,
+    title: 'Healthy Beverages',
+    description: 'Fresh juices, smoothies, and herbal infusions'
   },
   {
     icon: <FaUsers className="text-4xl text-amber-500" />,
@@ -50,6 +51,7 @@ const features = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
+      <AboutSection />
       {/* Hero Section */}
       <section className="relative h-96">
         <Image

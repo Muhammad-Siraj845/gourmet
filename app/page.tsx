@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AboutSection from "./components/About";
 
 export default function Home() {
   return (
@@ -62,21 +63,21 @@ export default function Home() {
             <div className="group text-center transform hover:scale-105 transition-all duration-300">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-amber-100 transition-colors duration-300">
                 <Image
-                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
-                  alt="Fine Wine"
+                  src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                  alt="Fresh Juices"
                   width={64}
                   height={64}
                   className="group-hover:scale-110 transition-transform duration-300 rounded-full"
                 />
               </div>
-              <h3 className="text-2xl font-semibold mb-3 group-hover:text-amber-500 transition-colors duration-300">Fine Wine Selection</h3>
-              <p className="text-gray-600">Curated wines from the world's finest vineyards</p>
+              <h3 className="text-2xl font-semibold mb-3 group-hover:text-amber-500 transition-colors duration-300">Fresh Juices</h3>
+              <p className="text-gray-600">Natural, vitamin-rich juices made from fresh fruits</p>
             </div>
             <div className="group text-center transform hover:scale-105 transition-all duration-300">
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-amber-100 transition-colors duration-300">
                 <Image
-                  src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
-                  alt="Dessert"
+                  src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Dessert presentation"
                   width={64}
                   height={64}
                   className="group-hover:scale-110 transition-transform duration-300 rounded-full"
@@ -88,6 +89,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* About Section */}
+      <AboutSection />
 
       {/* Gallery Section */}
       <section className="py-20 px-4 bg-gray-50">
@@ -155,7 +159,7 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-lg">
               <Image
-                src="https://images.unsplash.com/photo-1565299507177-b0ac66781028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                 alt="Dessert presentation"
                 width={400}
                 height={300}
@@ -169,8 +173,22 @@ export default function Home() {
             </div>
             <div className="group relative overflow-hidden rounded-lg">
               <Image
-                src="https://images.unsplash.com/photo-1559847844-1ff4d5b02fcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                 alt="Cocktail bar"
+                width={400}
+                height={300}
+                className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-semibold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  View More
+                </button>
+              </div>
+            </div>
+            <div className="group relative overflow-hidden rounded-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+                alt="Fresh juices and smoothies"
                 width={400}
                 height={300}
                 className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"

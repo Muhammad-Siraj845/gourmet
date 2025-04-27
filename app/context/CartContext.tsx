@@ -9,6 +9,9 @@ interface MenuItem {
   price: number;
   category: string;
   image: string;
+  isVegetarian?: boolean;
+  isSpicy?: boolean;
+  rating?: number;
 }
 
 interface CartContextType {
@@ -22,7 +25,7 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export function CartProvider({ children }: { children: ReactNode }) {
+export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<MenuItem[]>([]);
 
   const addToCart = (item: MenuItem) => {
@@ -59,12 +62,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
       {children}
     </CartContext.Provider>
   );
-}
+};
 
-export function useCart() {
+export const useCart = () => {
   const context = useContext(CartContext);
   if (context === undefined) {
     throw new Error('useCart must be used within a CartProvider');
   }
   return context;
-} 
+}; 

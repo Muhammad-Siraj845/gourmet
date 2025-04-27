@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -160,6 +161,14 @@ export default function ContactPage() {
           </form>
         </div>
       </div>
+
+      <Image
+        src="https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        alt="Restaurant Interior"
+        width={800}
+        height={400}
+        className="w-full h-64 object-cover rounded-lg shadow-lg"
+      />
     </div>
   );
 } 

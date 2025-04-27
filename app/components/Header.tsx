@@ -7,6 +7,7 @@ import { FaBars, FaTimes, FaShoppingCart, FaPhone, FaMapMarkerAlt, FaClock } fro
 import { SiVisa, SiMastercard, SiPaypal } from 'react-icons/si';
 import { useCart } from '../context/CartContext';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,52 +17,16 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      {/* Top Bar */}
-      <div className="bg-gray-900 text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <FaPhone className="text-amber-500" />
-              <span>+1 (123) 456-7890</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <FaMapMarkerAlt className="text-amber-500" />
-              <span>123 Restaurant St, City</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <FaClock className="text-amber-500" />
-              <span>Mon-Sun: 11am - 11pm</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <SiVisa className="text-blue-600" />
-              <SiMastercard className="text-red-600" />
-              <SiPaypal className="text-blue-500" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
+    <header className="bg-white shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-12 h-12">
-              <Image
-                src="/logo.png"
-                alt="Gourmet Haven Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <span className="text-2xl font-bold text-gray-800">Gourmet Haven</span>
+          <Link href="/" className="flex items-center">
+            <span className="text-2xl font-bold text-amber-500">Gourmet Haven</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
               className={`${
@@ -84,15 +49,7 @@ export default function Header() {
                 isActive('/about') ? 'text-amber-500' : 'text-gray-600'
               } hover:text-amber-500 transition-colors`}
             >
-              About Us
-            </Link>
-            <Link
-              href="/gallery"
-              className={`${
-                isActive('/gallery') ? 'text-amber-500' : 'text-gray-600'
-              } hover:text-amber-500 transition-colors`}
-            >
-              Gallery
+              About
             </Link>
             <Link
               href="/contact"
@@ -118,11 +75,11 @@ export default function Header() {
                 </span>
               )}
             </Link>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-600 hover:text-amber-500"
+            className="md:hidden text-gray-600 hover:text-amber-500 p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -131,13 +88,20 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden py-4"
+          >
             <div className="flex flex-col space-y-4">
               <Link
                 href="/"
                 className={`${
                   isActive('/') ? 'text-amber-500' : 'text-gray-600'
-                } hover:text-amber-500 transition-colors`}
+                } hover:text-amber-500 transition-colors text-lg`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
@@ -145,7 +109,8 @@ export default function Header() {
                 href="/menu"
                 className={`${
                   isActive('/menu') ? 'text-amber-500' : 'text-gray-600'
-                } hover:text-amber-500 transition-colors`}
+                } hover:text-amber-500 transition-colors text-lg`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Menu
               </Link>
@@ -153,23 +118,17 @@ export default function Header() {
                 href="/about"
                 className={`${
                   isActive('/about') ? 'text-amber-500' : 'text-gray-600'
-                } hover:text-amber-500 transition-colors`}
+                } hover:text-amber-500 transition-colors text-lg`}
+                onClick={() => setIsMenuOpen(false)}
               >
-                About Us
-              </Link>
-              <Link
-                href="/gallery"
-                className={`${
-                  isActive('/gallery') ? 'text-amber-500' : 'text-gray-600'
-                } hover:text-amber-500 transition-colors`}
-              >
-                Gallery
+                About
               </Link>
               <Link
                 href="/contact"
                 className={`${
                   isActive('/contact') ? 'text-amber-500' : 'text-gray-600'
-                } hover:text-amber-500 transition-colors`}
+                } hover:text-amber-500 transition-colors text-lg`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
@@ -177,18 +136,27 @@ export default function Header() {
                 href="/reservation"
                 className={`${
                   isActive('/reservation') ? 'text-amber-500' : 'text-gray-600'
-                } hover:text-amber-500 transition-colors`}
+                } hover:text-amber-500 transition-colors text-lg`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Reservation
               </Link>
-              <Link href="/cart" className="flex items-center space-x-2 text-gray-600 hover:text-amber-500 transition-colors">
-                <FaShoppingCart />
-                <span>Cart ({getCartItemCount()})</span>
+              <Link
+                href="/cart"
+                className="flex items-center space-x-2 text-gray-600 hover:text-amber-500 transition-colors text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span>Cart</span>
+                {getCartItemCount() > 0 && (
+                  <span className="bg-amber-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {getCartItemCount()}
+                  </span>
+                )}
               </Link>
             </div>
-          </div>
+          </motion.div>
         )}
-      </nav>
+      </div>
     </header>
   );
 } 

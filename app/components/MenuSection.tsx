@@ -16,35 +16,51 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   {
     id: 1,
-    name: 'Margherita Pizza',
-    description: 'Classic tomato sauce, mozzarella, and fresh basil',
+    name: 'Mediterranean Pizza',
+    description: 'Whole wheat crust, tomato sauce, fresh vegetables, and herbs',
     price: 12.99,
     category: 'pizza',
     image: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
   },
   {
     id: 2,
-    name: 'Spaghetti Carbonara',
-    description: 'Pasta with creamy egg sauce, pancetta, and parmesan',
+    name: 'Vegetable Pasta',
+    description: 'Whole grain pasta with fresh vegetables and olive oil',
     price: 14.99,
     category: 'pasta',
     image: 'https://images.unsplash.com/photo-1611270629569-8b357cb88da9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
   },
   {
     id: 3,
-    name: 'Caesar Salad',
-    description: 'Romaine lettuce, croutons, parmesan, and Caesar dressing',
+    name: 'Superfood Salad',
+    description: 'Mixed greens, quinoa, avocado, nuts, and seeds with lemon dressing',
     price: 9.99,
     category: 'salad',
     image: 'https://images.unsplash.com/photo-1546549032-9571cd6b27df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
   },
   {
     id: 4,
-    name: 'Tiramisu',
-    description: 'Classic Italian dessert with coffee and mascarpone',
+    name: 'Fruit Parfait',
+    description: 'Fresh seasonal fruits with yogurt and granola',
     price: 7.99,
     category: 'dessert',
     image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  },
+  {
+    id: 5,
+    name: 'Green Smoothie',
+    description: 'Spinach, banana, apple, and chia seeds',
+    price: 5.99,
+    category: 'beverage',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80'
+  },
+  {
+    id: 6,
+    name: 'Fresh Juice',
+    description: 'Seasonal fruit juice blend',
+    price: 4.99,
+    category: 'beverage',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80'
   }
 ];
 
